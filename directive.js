@@ -3,11 +3,11 @@ directive('actionVerbsGame', function () {
     return {
         controllerAs : 'multiplication',
         controller : ['$attrs', '$scope', function($attrs, $scope) {
-            this.x = 3;
-            this.y = 4;
             $scope.z = 5;
             $scope.t = 6;
         }],
-        templateUrl : 'action-verbs.html'
+        templateUrl: function(elem,attrs) {
+            return (attrs.libPath || 'lib') + '/angular-action-verbs-game/templates/action-verbs.html'
+        }
     };
 });
