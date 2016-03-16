@@ -70,8 +70,9 @@
     font-size: 30px;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card figure {
+    line-height: 90px;
     font-size: 20px;
   }
 }
