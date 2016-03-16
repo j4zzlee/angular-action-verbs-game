@@ -72,7 +72,7 @@
 }
 @media (max-width: 640px) {
   .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card figure {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 @media (max-width: 480px) {
