@@ -8,12 +8,12 @@ angular.module('st2forget.action-verbs-game', [])
                     statement: 'Drink',
                     answers  : [
                         {
-                            id        : 1,
-                            value     : 'Drink'
+                            id   : 1,
+                            value: 'Drink'
                         },
                         {
-                            id        : 2,
-                            value     : 'Uong'
+                            id   : 2,
+                            value: 'Uong'
                         }
                     ]
                 },
@@ -22,12 +22,12 @@ angular.module('st2forget.action-verbs-game', [])
                     statement: 'Swim',
                     answers  : [
                         {
-                            id        : 3,
-                            value     : 'Swim'
+                            id   : 3,
+                            value: 'Swim'
                         },
                         {
-                            id        : 4,
-                            value     : 'Boi'
+                            id   : 4,
+                            value: 'Boi'
                         }
                     ]
                 },
@@ -36,12 +36,12 @@ angular.module('st2forget.action-verbs-game', [])
                     statement: 'Eat',
                     answers  : [
                         {
-                            id        : 5,
-                            value     : 'Eat'
+                            id   : 5,
+                            value: 'Eat'
                         },
                         {
-                            id        : 6,
-                            value     : 'An'
+                            id   : 6,
+                            value: 'An'
                         }
                     ]
                 },
@@ -50,12 +50,12 @@ angular.module('st2forget.action-verbs-game', [])
                     statement: 'Run',
                     answers  : [
                         {
-                            id        : 7,
-                            value     : 'Run'
+                            id   : 7,
+                            value: 'Run'
                         },
                         {
-                            id        : 8,
-                            value     : 'Chay'
+                            id   : 8,
+                            value: 'Chay'
                         }
                     ]
                 }
@@ -63,9 +63,7 @@ angular.module('st2forget.action-verbs-game', [])
         };
 
         var link = function ($scope, $element, $attrs) {
-            $element.on('click', function (e) {
 
-            });
         };
 
         return {
@@ -75,10 +73,10 @@ angular.module('st2forget.action-verbs-game', [])
                 $scope.model             = model;
 
                 $scope.buildModel = function () {
-                    var sortedAnswers      = [],
+                    var sortedAnswers = [],
                         randomAnswers = [],
-                        questions = $scope.model.questions,
-                        colCount = 4;
+                        questions     = $scope.model.questions,
+                        colCount      = 4;
 
 
                     questions.forEach(function (question) {
@@ -89,7 +87,7 @@ angular.module('st2forget.action-verbs-game', [])
                     });
 
                     randomAnswers = _.shuffle(randomAnswers);
-                    var rowCount = parseInt(randomAnswers.length/colCount)
+                    var rowCount  = parseInt(randomAnswers.length / colCount)
                     if (rowCount * colCount < randomAnswers.length) {
                         rowCount += 1;
                     }
@@ -115,9 +113,8 @@ angular.module('st2forget.action-verbs-game', [])
                     return $scope.directiveRootPath + '/angular-action-verbs-game/templates/action-verbs.html';
                 };
 
-                $scope.itemClick = function(answer) {
+                $scope.itemClick = function (answer) {
                     answer.isActive = !answer.isActive;
-                    console.log(answer);
                 };
             }],
 
