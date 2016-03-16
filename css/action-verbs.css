@@ -66,20 +66,18 @@
 }
 @media all {
   .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card figure {
-    line-height: 100px;
+    line-height: 90px;
     font-size: 30px;
   }
 }
 @media (max-width: 1024px) {
   .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card figure {
-    line-height: 90px;
     font-size: 20px;
   }
 }
 @media (max-width: 480px) {
   .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card figure {
     font-size: 20px;
-    line-height: 90px;
   }
 }
 .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card .front {
