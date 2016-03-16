@@ -5,11 +5,52 @@
   display: inline;
 }
 
+@media all {
+  .container {
+    width: 150px;
+    height: 150px;
+  }
+  .container .flip-card figure {
+    line-height: 150px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .container .flip-card figure {
+    line-height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .container .flip-card figure {
+    line-height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .container .flip-card figure {
+    line-height: 60px;
+  }
+}
+
 .container {
-  width: 100px;
-  height: 100px;
   position: relative;
-  margin: 10px auto;
   -webkit-perspective: 800px;
   -moz-perspective: 800px;
   -o-perspective: 800px;
@@ -40,13 +81,12 @@
 
 .container .flip-card figure {
   display: block;
+  word-wrap: break-word;
   height: 100%;
   width: 100%;
-  line-height: 100px;
   color: white;
   text-align: center;
   font-weight: bold;
-  font-size: 15px;
   position: absolute;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
