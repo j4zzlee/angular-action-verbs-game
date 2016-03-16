@@ -52,16 +52,44 @@
   -moz-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -webkit-border-radius: 15px;
+
+  /* Firefox 1-3.6 */
+  -moz-border-radius: 15px;
+
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: 15px;
 }
 
 .container .flip-card .front {
-  background: red;
+  background: #fcbb49 repeat-x left bottom;
+  border:1px solid #ccc;
+  border-bottom:2px solid #bbb;
+  border-top:1px solid #ddd;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-box-shadow:5px 2px 2px #bbb;
+  box-shadow: 5px 2px 2px #bbb;
+  -moz-box-shadow: 5px 2px 2px #bbb;
 }
 
 .container .flip-card .back {
-  background: blue;
   -webkit-transform: rotateY( 180deg );
   -moz-transform: rotateY( 180deg );
   -o-transform: rotateY( 180deg );
   transform: rotateY( 180deg );
+
+  background: #FCBEBE repeat-x left bottom;
+  border:1px solid #ccc;
+  border-bottom:2px solid #bbb;
+  border-top:1px solid #ddd;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-box-shadow:5px 2px 2px #bbb;
+  box-shadow: 5px 2px 2px #bbb;
+  -moz-box-shadow: 5px 2px 2px #bbb;
 }
