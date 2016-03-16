@@ -1,0 +1,25 @@
+{
+  "name": "angular-action-verbs-game",
+  "version": "1.0.0",
+  "description": "An English word unscramble game",
+  "main": "directive.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/st2forget/angular-action-verbs-game.git"
+  },
+  "author": "Le Huu Hoang Gia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/st2forget/angular-action-verbs-game/issues"
+  },
+  "homepage": "https://github.com/st2forget/angular-action-verbs-game#readme"
+}
