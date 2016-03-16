@@ -50,9 +50,7 @@ angular.module('st2forget.action-verbs-game', [])
                     console.log(e.target);
                 };
             }],
-            template    : '<div class="action-verbs-item" ng-click="itemClick($event)" ng-repeat="question in model.questions">' +
-            '{{ question.statement }}' +
-            "</div>",
+            templateUrl    : 'lib/angular-action-verbs-game/templates/action-verbs.html',
             link        : link
         };
     });
