@@ -73,12 +73,8 @@ angular.module('st2forget.action-verbs-game', [])
                 $scope.model             = model;
 
                 $scope.buildModel = function () {
-                    var sortedAnswers = [],
-                        randomAnswers = [],
-                        questions     = $scope.model.questions,
-                        colCount      = 4;
-
-
+                    var randomAnswers = [],
+                        questions     = $scope.model.questions;
                     questions.forEach(function (question) {
                         question.answers.forEach(function (answer) {
                             answer.questionId = question.id;
@@ -87,24 +83,7 @@ angular.module('st2forget.action-verbs-game', [])
                     });
 
                     randomAnswers = _.shuffle(randomAnswers);
-                    var rowCount  = parseInt(randomAnswers.length / colCount)
-                    if (rowCount * colCount < randomAnswers.length) {
-                        rowCount += 1;
-                    }
-
-                    for (var i = 0; i < rowCount; i++) {
-                        var row = [];
-                        for (var j = 0; j < colCount; j++) {
-                            var totalCount = colCount * i + j;
-                            if (totalCount >= randomAnswers.length) {
-                                break;
-                            }
-                            row.push(randomAnswers[totalCount]);
-                        }
-                        sortedAnswers.push(row);
-                    }
-
-                    return sortedAnswers;
+                    return randomAnswers;
                 };
 
                 $scope.sortedAnswers = $scope.buildModel();
