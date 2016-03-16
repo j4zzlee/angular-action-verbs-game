@@ -1,3 +1,16 @@
-<div class="action-verbs-item" ng-click="itemClick($event)" ng-repeat="question in model.questions">
-    {{ question.statement }}
+<div class="row" ng-repeat="row in sortedAnswers">
+    <div class="col col-25" ng-repeat="answer in row" >
+        <section class="container">
+            <div class="card" ng-class="answer.isActive ? 'flipped' : ''" ng-click="itemClick(answer)">
+                <figure class="front">
+                    Card Icon
+                </figure>
+                <figure class="back">
+                    {{answer.value}}
+                </figure>
+            </div>
+        </section>
+
+    </div>
 </div>
+

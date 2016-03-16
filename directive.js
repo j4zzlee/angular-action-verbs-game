@@ -9,12 +9,10 @@ angular.module('st2forget.action-verbs-game', [])
                     answers  : [
                         {
                             id        : 1,
-                            questionId: 1,
                             value     : 'Drink'
                         },
                         {
                             id        : 2,
-                            questionId: 1,
                             value     : 'Uong'
                         }
                     ]
@@ -25,13 +23,39 @@ angular.module('st2forget.action-verbs-game', [])
                     answers  : [
                         {
                             id        : 3,
-                            questionId: 2,
                             value     : 'Swim'
                         },
                         {
                             id        : 4,
-                            questionId: 2,
                             value     : 'Boi'
+                        }
+                    ]
+                },
+                {
+                    id       : 3,
+                    statement: 'Eat',
+                    answers  : [
+                        {
+                            id        : 5,
+                            value     : 'Eat'
+                        },
+                        {
+                            id        : 6,
+                            value     : 'An'
+                        }
+                    ]
+                },
+                {
+                    id       : 4,
+                    statement: 'Run',
+                    answers  : [
+                        {
+                            id        : 7,
+                            value     : 'Run'
+                        },
+                        {
+                            id        : 8,
+                            value     : 'Chay'
                         }
                     ]
                 }
@@ -39,21 +63,61 @@ angular.module('st2forget.action-verbs-game', [])
         };
 
         var link = function ($scope, $element, $attrs) {
+            $element.on('click', function (e) {
 
+            });
         };
 
         return {
             controllerAs: 'actionVerbsGame',
             controller  : ['$attrs', '$scope', '$element', function ($attrs, $scope, $element) {
                 $scope.directiveRootPath = $attrs.directiveRootPath;
-                $scope.model   = model;
+                $scope.model             = model;
 
-                $scope.itemClick = function (e) {
-                    console.log(e.target);
+                $scope.buildModel = function () {
+                    var sortedAnswers      = [],
+                        randomAnswers = [],
+                        questions = $scope.model.questions,
+                        colCount = 4;
+
+
+                    questions.forEach(function (question) {
+                        question.answers.forEach(function (answer) {
+                            answer.questionId = question.id;
+                            randomAnswers.push(answer);
+                        })
+                    });
+
+                    randomAnswers = _.shuffle(randomAnswers);
+                    var rowCount = parseInt(randomAnswers.length/colCount)
+                    if (rowCount * colCount < randomAnswers.length) {
+                        rowCount += 1;
+                    }
+
+                    for (var i = 0; i < rowCount; i++) {
+                        var row = [];
+                        for (var j = 0; j < colCount; j++) {
+                            var totalCount = colCount * i + j;
+                            if (totalCount >= randomAnswers.length) {
+                                break;
+                            }
+                            row.push(randomAnswers[totalCount]);
+                        }
+                        sortedAnswers.push(row);
+                    }
+
+                    return sortedAnswers;
                 };
+
+                $scope.sortedAnswers = $scope.buildModel();
 
                 $scope.getTemplateUrl = function () {
                     return $scope.directiveRootPath + '/angular-action-verbs-game/templates/action-verbs.html';
+                };
+
+                $scope.itemClick = function(answer) {
+                    answer.isActive = !answer.isActive;
+                    console.log(answer);
                 };
             }],
 
