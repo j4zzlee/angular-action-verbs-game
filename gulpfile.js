@@ -1,23 +1,27 @@
 'use strict';
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+//var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
+var compass = require('gulp-compass');
+var rename = require('gulp-rename');
+var path = require('path');
+var cssmin = require('gulp-minify-css');
 
-gulp.task('sass', function () {
-    return gulp.src('./sass/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./css'));
+gulp.task('build', ['sass:compress', 'js:compress'], function () {
+
 });
 
-gulp.task('sass:compress', function () {
-    return gulp.src('./sass/**/*.scss')
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest('./css'));
-});
-
-gulp.task('sass:watch', function () {
-    gulp.watch('./sass/**/*.scss', ['sass']);
+gulp.task('sass:compress', function() {
+    console.log(path.join(__dirname, 'assets'));
+    gulp.src('./sass/**/*.scss')
+        .pipe(compass({
+            project: path.join(__dirname, ''),
+            css: 'css',
+            sass: 'sass'
+        }))
+        .pipe(cssmin())
+        .pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('js:compress', function() {
