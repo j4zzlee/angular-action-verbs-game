@@ -1,5 +1,5 @@
 <div class="action-verbs-container">
-    <div class="action-verbs-item" ng-repeat="answer in sortedAnswers">
+    <div class="action-verbs-item" ng-repeat="answer in sortedAnswers" ng-if="!hasPassed">
         <section class="action-verbs-item-container">
             <div class="action-verbs-item-flip-card" ng-class="answer.isActive ? 'flipped' : ''"
                  ng-click="itemClick(answer, $event)">
@@ -18,6 +18,10 @@
                 </figure>
             </div>
         </section>
+    </div>
+
+    <div ng-if="hasPassed">
+        Passed
     </div>
 </div>
 
