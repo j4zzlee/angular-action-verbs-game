@@ -8,6 +8,30 @@
 @media all {
   .action-verbs-container .action-verbs-item {
     width: 25%;
+    height: 250px;
+  }
+}
+@media (max-width: 1920px) {
+  .action-verbs-container .action-verbs-item {
+    width: 25%;
+    height: 180px;
+  }
+}
+@media (max-width: 1620px) {
+  .action-verbs-container .action-verbs-item {
+    width: 25%;
+    height: 150px;
+  }
+}
+@media (max-width: 1366px) {
+  .action-verbs-container .action-verbs-item {
+    width: 25%;
+    height: 125px;
+  }
+}
+@media (max-width: 1024px) {
+  .action-verbs-container .action-verbs-item {
+    width: 25%;
     height: 100px;
   }
 }
@@ -66,18 +90,36 @@
 }
 @media all {
   .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card figure {
-    line-height: 90px;
-    font-size: 30px;
+    line-height: 240px;
+    font-size: 60px;
+  }
+}
+@media (max-width: 1920px) {
+  .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card figure {
+    line-height: 170px;
+  }
+}
+@media (max-width: 1620px) {
+  .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card figure {
+    line-height: 140px;
+  }
+}
+@media (max-width: 1366px) {
+  .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card figure {
+    line-height: 115px;
+    font-size: 40px;
   }
 }
 @media (max-width: 1024px) {
   .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card figure {
-    font-size: 20px;
+    font-size: 30px;
+    line-height: 90px;
   }
 }
 @media (max-width: 480px) {
   .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card figure {
-    font-size: 20px;
+    font-size: 30px;
+    line-height: 90px;
   }
 }
 .action-verbs-container .action-verbs-item .action-verbs-item-container .action-verbs-item-flip-card .front {

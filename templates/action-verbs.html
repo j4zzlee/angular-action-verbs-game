@@ -1,16 +1,23 @@
 <div class="action-verbs-container">
-    <div class="action-verbs-item" ng-repeat="answer in sortedAnswers" >
+    <div class="action-verbs-item" ng-repeat="answer in sortedAnswers">
         <section class="action-verbs-item-container">
-            <div class="action-verbs-item-flip-card" ng-class="answer.isActive ? 'flipped' : ''" ng-click="itemClick(answer)">
+            <div class="action-verbs-item-flip-card" ng-class="answer.isActive ? 'flipped' : ''"
+                 ng-click="itemClick(answer, $event)">
+                <audio controls class="audio hide" src="{{ answer.Sound }}">
+                </audio>
                 <figure class="front">
-                    Card Icon
+
                 </figure>
-                <figure class="back">
-                    {{answer.value}}
+
+                <figure class="back" ng-if="answer.Value">
+                    {{answer.Value}}
+                </figure>
+
+                <figure class="back" ng-if="answer.Photo"
+                        style="background-size: cover; background: url({{ answer.Photo }}) no-repeat center center">
                 </figure>
             </div>
         </section>
-
     </div>
 </div>
 

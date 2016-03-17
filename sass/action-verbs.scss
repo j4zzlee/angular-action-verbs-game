@@ -10,6 +10,26 @@
 
     @media all {
       width: 25%;
+      height: 250px;
+    }
+
+    @media (max-width: 1920px) {
+      width: 25%;
+      height: 180px;
+    }
+
+    @media (max-width: 1620px) {
+      width: 25%;
+      height: 150px;
+    }
+
+    @media (max-width: 1366px) {
+      width: 25%;
+      height: 125px;
+    }
+
+    @media (max-width: 1024px) {
+      width: 25%;
       height: 100px;
     }
 
@@ -52,16 +72,31 @@
           @include border-radius(15px);
 
           @media all {
-            line-height: 90px;
-            font-size: 30px;
+            line-height: 240px;
+            font-size: 60px;
+          }
+
+          @media (max-width: 1920px) {
+            line-height: 170px;
+          }
+
+          @media (max-width: 1620px) {
+            line-height: 140px;
+          }
+
+          @media (max-width: 1366px) {
+            line-height: 115px;
+            font-size: 40px;
           }
 
           @media (max-width: 1024px) {
-            font-size: 20px;
+            font-size: 30px;
+            line-height: 90px;
           }
 
           @media (max-width: 480px) {
-            font-size: 20px;
+            font-size: 30px;
+            line-height: 90px;
           }
         }
 
