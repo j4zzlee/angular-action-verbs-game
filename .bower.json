@@ -20,11 +20,11 @@
     "angular-css": "^1.0.7",
     "ngCordova": "^0.1.24-alpha"
   },
-  "_release": "1ee93d8c63",
+  "_release": "9d25183ffb",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "1ee93d8c6307b0111681332e7e82bf68db84afa8"
+    "commit": "9d25183ffb8331323e97ee9cfd3fa4795032204f"
   },
   "_source": "git://github.com/st2forget/angular-action-verbs-game.git",
   "_target": "*",
