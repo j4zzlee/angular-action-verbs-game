@@ -5,7 +5,7 @@
   "main": "directive.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "watch": "webpack --watch --display-error-details --config webpack.config.js"
+    "watch": "webpack --watch --display-error-details --config webpack-watch.config.js"
   },
   "devDependencies": {
     "babel-core": "^6.4.5",

@@ -5,6 +5,18 @@ var webpack           = require('webpack'),
     PluginExtractText = require("extract-text-webpack-plugin");
 
 module.exports = function (options) {
+    options = options || {};
+    var plugins = [
+        new PluginExtractText('[name].css', {allChunks: true}),
+        new webpack.NoErrorsPlugin()
+    ];
+
+    if (options.minify) {
+        plugins.push(new webpack.optimize.UglifyJsPlugin({
+            sourceMap: false
+        }))
+    }
+
     return [{
         entry  : {
             vendor   : [path.resolve(__dirname, './vendor.js')],
@@ -60,12 +72,6 @@ module.exports = function (options) {
                 }
             ]
         },
-        plugins: [
-            new PluginExtractText('[name].css', {allChunks: true}),
-            new webpack.optimize.UglifyJsPlugin({
-                sourceMap: false
-            }),
-            new webpack.NoErrorsPlugin()
-        ]
+        plugins: plugins
     }]
 };
