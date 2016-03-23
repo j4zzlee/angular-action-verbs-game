@@ -65,12 +65,10 @@ angular.module('st2forget.action-verbs-game', [])
                 '$attrs',
                 '$scope',
                 '$element',
-                '$cordovaNativeAudio',
                 '$window',
                 '$sce',
                 '$timeout',
-                '$cordovaFile',
-                function ($attrs, $scope, $element, $cordovaNativeAudio, $window, $sce, $timeout, $cordovaFile) {
+                function ($attrs, $scope, $element, $window, $sce, $timeout) {
                     $scope.directiveRootPath = $attrs.directiveRootPath;
                     $scope.model             = model;
                     $scope.chosenAnswer      = null;
@@ -82,7 +80,7 @@ angular.module('st2forget.action-verbs-game', [])
 
                         questions.forEach(function (question) {
                             if ($window.plugins && $window.plugins.NativeAudio) {
-                                $cordovaNativeAudio.preloadSimple(question.Statement, question.Sound);
+                              $window.plugins.NativeAudio.preloadSimple(question.Statement, question.Sound);
                             }
 
                             var answer = question.Answers[0];
@@ -144,7 +142,7 @@ angular.module('st2forget.action-verbs-game', [])
 
                         answer.isActive = true;
                         if ($window.plugins && $window.plugins.NativeAudio) {
-                            $cordovaNativeAudio.play(answer.Statement);
+                          $window.plugins.NativeAudio.play(answer.Statement);
                         } else {
                             var $el = angular.element(e.target).parent();
                             if ($el && $el.length) {

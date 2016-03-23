@@ -1,0 +1,125 @@
+@import "../node_modules/compass-mixins/lib/_compass.scss";
+
+.action-verbs-container {
+  position: relative;
+
+  .action-verbs-item {
+    float: left;
+    padding: 5px;
+
+    @media all {
+      width: 25%;
+      height: 250px;
+    }
+
+    @media (max-width: 1920px) {
+      width: 25%;
+      height: 180px;
+    }
+
+    @media (max-width: 1620px) {
+      width: 25%;
+      height: 150px;
+    }
+
+    @media (max-width: 1366px) {
+      width: 25%;
+      height: 125px;
+    }
+
+    @media (max-width: 1024px) {
+      width: 25%;
+      height: 100px;
+    }
+
+    @media (max-width: 640px) {
+      width: 33.3%;
+    }
+
+    @media (max-width: 480px) {
+      width: 50%;
+    }
+
+    .action-verbs-item-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      @include perspective(800px);
+
+      .action-verbs-item-flip-card {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        cursor: pointer;
+        @include transition(1s);
+        @include transform-style(preserve-3d);
+
+        &.flipped {
+          @include transform(rotateY(180deg));
+        }
+
+        figure {
+          display: block;
+          word-wrap: break-word;
+          height: 100%;
+          width: 100%;
+          color: white;
+          text-align: center;
+          font-weight: bold;
+          position: absolute;
+          @include backface-visibility(hidden);
+          @include border-radius(15px);
+
+          @media all {
+            line-height: 240px;
+            font-size: 60px;
+          }
+
+          @media (max-width: 1920px) {
+            line-height: 170px;
+          }
+
+          @media (max-width: 1620px) {
+            line-height: 140px;
+          }
+
+          @media (max-width: 1366px) {
+            line-height: 115px;
+            font-size: 40px;
+          }
+
+          @media (max-width: 1024px) {
+            font-size: 30px;
+            line-height: 90px;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 30px;
+            line-height: 90px;
+          }
+        }
+
+        .front {
+          background: #fcbb49 repeat-x left bottom;
+          border: 1px solid #ccc;
+          border-bottom: 2px solid #bbb;
+          border-top: 1px solid #ddd;
+          @include border-radius(10px);
+          @include box-shadow(5px 2px 2px #bbb);
+        }
+
+        .back {
+          @include transform(rotateY(180deg));
+
+          background: #FCBEBE repeat-x left bottom;
+          border: 1px solid #ccc;
+          border-bottom: 2px solid #bbb;
+          border-top: 1px solid #ddd;
+          @include border-radius(10px);
+          @include box-shadow(5px 2px 2px #bbb);
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,32 @@
+{
+  "name": "angular-action-verbs-game",
+  "authors": [
+    "st2forget <hoanggia.lh@gmail.com>"
+  ],
+  "description": "An English Game",
+  "main": "directive.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "https://github.com/st2forget/angular-action-verbs-game",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-css": "^1.0.7",
+    "ngCordova": "^0.1.24-alpha"
+  },
+  "_release": "1ee93d8c63",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1ee93d8c6307b0111681332e7e82bf68db84afa8"
+  },
+  "_source": "git://github.com/st2forget/angular-action-verbs-game.git",
+  "_target": "*",
+  "_originalSource": "st2forget/angular-action-verbs-game"
+}
